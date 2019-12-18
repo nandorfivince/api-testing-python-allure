@@ -13,5 +13,6 @@ It is a prototype project for experimental purposes using python
 #### `E2E` [ done ]
 #### `Authentication` [ done ]
 #### `Jenkins Integration`
+( -> Jenkins.war -> java -jar Jenkins.war --httpPort=80886 -> UI installation with default plugins)
 #### `Page Object Pattern for UI tests`
 #### `Allure`
