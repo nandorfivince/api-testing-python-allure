@@ -1,10 +1,6 @@
 from selenium.webdriver import Chrome
 import pytest
 
-skipifvar = 10
-# exec command for group: pytest -m Smoke
-# exec command for spec tc: pytest -k test_execute_frontend_example
-# exec command for all expect tc: pytest -m "not Sanity"
 
 @pytest.fixture(scope="module")  # For all test cases in this module
 def setPath():
