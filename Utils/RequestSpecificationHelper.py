@@ -1,8 +1,8 @@
 import json
 import time
 
-import utils.RequestSpecificationFactory
-import utils.ResourceReader
+import Utils.RequestSpecificationFactory
+import Utils.ResourceReader
 
 
 class RequestSpecificationHelper:
@@ -15,10 +15,10 @@ class RequestSpecificationHelper:
             print("Executing test: {" + testCaseID + "}")
 
             if requestBodyResourceName and responseBodyJsonResourceName is not None:
-                reqBodyResourceName = utils.ResourceReader.ResourceReader.read_by_name(requestBodyResourceName)
-                expectedJsonBody = utils.ResourceReader.ResourceReader.read_by_name(responseBodyJsonResourceName)
+                reqBodyResourceName = Utils.ResourceReader.ResourceReader.read_by_name(requestBodyResourceName)
+                expectedJsonBody = Utils.ResourceReader.ResourceReader.read_by_name(responseBodyJsonResourceName)
                 time.sleep(1)
-                response = utils.RequestSpecificationFactory.RequestSpecificationFactory. \
+                response = Utils.RequestSpecificationFactory.RequestSpecificationFactory. \
                     request_specification_factory(requestMethod, endpointPath, reqBodyResourceName)
                 print(response)
                 assert response.status_code == responseStatusCode
@@ -28,24 +28,24 @@ class RequestSpecificationHelper:
             elif requestBodyResourceName and responseBodyJsonResourceName is None:
                 reqBodyResourceName = requestBodyResourceName
                 time.sleep(1)
-                response = utils.RequestSpecificationFactory.RequestSpecificationFactory. \
+                response = Utils.RequestSpecificationFactory.RequestSpecificationFactory. \
                     request_specification_factory(requestMethod, endpointPath, reqBodyResourceName)
                 print(response)
                 assert response.status_code == responseStatusCode
 
             elif requestBodyResourceName is not None and responseBodyJsonResourceName is None:
-                reqBodyResourceName = utils.ResourceReader.ResourceReader.read_by_name(requestBodyResourceName)
+                reqBodyResourceName = Utils.ResourceReader.ResourceReader.read_by_name(requestBodyResourceName)
                 time.sleep(1)
-                response = utils.RequestSpecificationFactory.RequestSpecificationFactory. \
+                response = Utils.RequestSpecificationFactory.RequestSpecificationFactory. \
                     request_specification_factory(requestMethod, endpointPath, reqBodyResourceName)
                 print(response)
                 assert response.status_code == responseStatusCode
 
             elif requestBodyResourceName is None and responseBodyJsonResourceName is not None:
                 reqBodyResourceName = requestBodyResourceName
-                expectedJsonBody = utils.ResourceReader.ResourceReader.read_by_name(responseBodyJsonResourceName)
+                expectedJsonBody = Utils.ResourceReader.ResourceReader.read_by_name(responseBodyJsonResourceName)
                 time.sleep(1)
-                response = utils.RequestSpecificationFactory.RequestSpecificationFactory. \
+                response = Utils.RequestSpecificationFactory.RequestSpecificationFactory. \
                     request_specification_factory(requestMethod, endpointPath, reqBodyResourceName)
                 print(response)
                 assert response.status_code == responseStatusCode

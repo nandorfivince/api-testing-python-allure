@@ -3,7 +3,7 @@ import json
 import requests
 from requests.auth import HTTPBasicAuth
 
-import utils.Config
+import Utils.Config
 
 
 class RequestSpecificationFactory:
@@ -11,7 +11,7 @@ class RequestSpecificationFactory:
     def request_specification_factory(self, methodType, url, data):
         json_content_type = {'content-type': 'application/json'}
 
-        if utils.Config.Config.is_secured_environment() is True:
+        if Utils.Config.Config.is_secured_environment() is True:
             if methodType is "GET" and data is not None:
                 return requests.get(url, data=json.dumps(data), headers=json_content_type,
                                     auth=HTTPBasicAuth("usrname", "pwd"))

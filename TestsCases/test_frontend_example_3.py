@@ -4,7 +4,7 @@ from selenium.webdriver import Chrome
 @pytest.fixture()
 def environment_setup():
     global driver
-    path = "C:\\git\\api-testing-python-allure\\resources\\chromedriver.exe"
+    path = "C:\\git\\api-testing-python-allure\\Resources\\chromedriver.exe"
     driver = Chrome(executable_path=path)
     driver.get("https://www.thetestingworld.com/testing")
     driver.maximize_window()

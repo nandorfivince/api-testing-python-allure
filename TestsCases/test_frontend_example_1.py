@@ -11,7 +11,7 @@ skipifvar = 10
 @pytest.fixture()
 def setPath():  # For each test cases
     global driver
-    path = "C:\\git\\api-testing-python-allure\\resources\\chromedriver.exe"
+    path = "C:\\git\\api-testing-python-allure\\Resources\\chromedriver.exe"
     driver = Chrome(executable_path=path)
     yield  # call for after the test case execution
     driver.close()

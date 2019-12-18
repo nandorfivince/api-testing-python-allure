@@ -5,7 +5,7 @@ from selenium.webdriver import Chrome
 @pytest.fixture(scope="module")  # For all test cases in this module
 def setPath():
     global driver
-    path = "C:\\git\\api-testing-python-allure\\resources\\chromedriver.exe"
+    path = "C:\\git\\api-testing-python-allure\\Resources\\chromedriver.exe"
     driver = Chrome(executable_path=path)
     yield  # call for after the test case execution
     driver.close()
