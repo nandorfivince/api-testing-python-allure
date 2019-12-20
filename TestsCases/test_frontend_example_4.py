@@ -1,7 +1,7 @@
 import pytest
-import Utils.Driver
+
 import Utils.ContactUsPage
-from selenium.webdriver import Chrome
+import Utils.Driver
 
 global contactUsPage
 contactUsPage = Utils.ContactUsPage
@@ -16,4 +16,4 @@ def environment_setup():
 
 
 def test_execute_frontend_example4(environment_setup):
-    driver
+    contactUsPage.get_locator_from_my_dict("Contact_Us_Btn").click()

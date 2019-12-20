@@ -26,3 +26,5 @@ class Driver:
     def close_browser(self, driver):
         driver.close()
         driver.quit()
+
+
