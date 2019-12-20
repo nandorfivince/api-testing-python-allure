@@ -2,12 +2,13 @@ import os
 
 
 class Config:
+    global BASE_URL_ENV_VAR_NAME
+    global REQRES_API_BASE_URL
+
     DEFAULT_REST_API_BASE_URL = "https://reqres.in/api/"
     USERS_REST_API_BASE_URL = DEFAULT_REST_API_BASE_URL + "/users"
 
-    global BASE_URL_ENV_VAR_NAME
     BASE_URL_ENV_VAR_NAME = "TEST_API_BASE_URL"
-
 
     def initialize_api_base_url(self):
         base_url_env_var = os.getenv(BASE_URL_ENV_VAR_NAME)
@@ -20,11 +21,8 @@ class Config:
             print("Api BASE URL is: " + base_url)
         return base_url
 
-    global REQRES_API_BASE_URL
     REQRES_API_BASE_URL = initialize_api_base_url()
-
 
     def is_secured_environment(self):
         if REQRES_API_BASE_URL.__contains__("https"):
             return True
-

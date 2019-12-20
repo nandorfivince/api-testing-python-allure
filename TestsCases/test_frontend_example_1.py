@@ -22,6 +22,7 @@ def setPath():  # For each test cases
 def test_execute_frontend_example(setPath):
     driver.get("http://www.thetestingworld.com/testing")
     driver.maximize_window()
+    driver.find
 
 
 @pytest.mark.Sanity
