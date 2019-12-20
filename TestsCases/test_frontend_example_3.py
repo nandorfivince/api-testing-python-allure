@@ -8,7 +8,6 @@ def environment_setup():
     driver = Chrome(executable_path=path)
     driver.get("https://www.thetestingworld.com/testing")
     driver.maximize_window()
-    driver.
     yield
     driver.close()
 
