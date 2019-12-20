@@ -13,5 +13,5 @@ It is a prototype project for experimental purposes using python
 #### `E2E` [ done ]
 #### `Authentication` [ done ]
 #### `Jenkins Integration` [ done ]
-#### `Allure` [ partially done ]
-#### `Page Object Pattern for UI tests` [ todo ]
+#### `Page Object Pattern for UI tests` [ done ]
+#### `Allure` [ in progress ]
